@@ -2,12 +2,11 @@
 
 ICLR 2026 Accepted Paper
 
-Yongrui Ma$^{1,2}$, Shijie Zhao$^{1*}$, Mingde Yao$^{2,4}$, Junlin Li$^{1}$, Li Zhang$^1$, Xiaohong Liu$^5$, Qi Dou$^3$, Jinwei Gu$^3$, Tianfan Xue${2,4*}$
+Yongrui Ma, Shijie Zhao, Mingde Yao, Junlin Li, Li Zhang, Xiaohong Liu, Qi Dou, Jinwei Gu, Tianfan Xue
 
-$*$ incidates corresponding authors.
+[[Home Page](https://mayongrui.github.io/RDVFI/)] [[Code](https://github.com/Mayongrui/RDVFI/tree/master)] [[Paper](https://openreview.net/pdf?id=OiWyf1BNtC)]
 
-[[Home Page](https://mayongrui.github.io/RDVFI/)] [[Code](https://github.com/Mayongrui/RDVFI/tree/master)] [[Paper](https://mayongrui.github.io/RDVFI/)]
-
+Please contact Yongrui Ma at yongrayma@gmail.com for more information.
 
 ## Action List
 - [ ] Arxiv/ICLR paper link release
