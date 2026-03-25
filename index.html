@@ -241,7 +241,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
-<h1 class="title is-4 publication-title">Realtime Video Frame Interpolation Using One-Step Diffusion Sampling</h1>
+<h1 class="title is-4 publication-title">Bi-directional Autoregressive Diffusion for Large Complex Motion Interpolation</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://sites.google.com/view/yongrayma/?pli=1" target="_blank">Yongrui Ma</a><sup>1,2</sup>,</span>
@@ -278,7 +278,7 @@
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
                     <span class="author-block"><sup>1</sup>ByteDance Inc., <sup>2</sup>CUHK MMLab, <sup>3</sup>CUHK, <sup>4</sup>CPII under InnoHK, <sup>5</sup>Shanghai Jiao Tong University
-                      <br>ICLR 2026</span>
+                      <br>CVPR 2026</span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Corresponding Authors</small></span>
                   </div>
@@ -340,11 +340,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="static/images/teaser_v10.jpg" alt="Teaser image showing realtime video frame interpolation" width="100%">
+      <img src="./static/images/teaser_v3.jpg" alt="Teaser image showing realtime video frame interpolation" width="100%">
       
       <h2 class="subtitle has-text-centered">
-        Video frame interpolation results of the proposed Unet-based RDVFI-U and DiT-based RDVFI-D with comparisons to state-of-the-art methods. RDVFI produces the most visually pleasant and the best numeric results with a 400x acceleration, owing to more proper modeling of the intermediate motions using the high-order continuous pixel trajectories, compared with previous direct frame-generation methods, and linear motion controls. 
-          </h2>
+       The proposed ARVFI interpolates a sequence frame based on previous predictions, while the current full-sequence interpolation method, such as Wan, generates all intermediate frames simultaneously. This bidirectional autoregressive interpolation scheme mitigates increasing FID errors as frames move away from the input frames and generates more continuous and consistent results, as shown in the bottom left figure. Additionally, because a frame is predicted based on all previous interpolation results, the diffusion network can interpolate with fewer diffusion sampling steps and superior efficiency. Our RDVFI accelerates Wan by 3x with higher interpolation accuracy (FID score in the bottom left figure) and visual quality (see yellow boxes).
+         </h2>
     </div>
   </div>
 </section>
@@ -358,7 +358,8 @@
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
           <p>
-            Video Frame Interpolation (VFI) involving large, complex motions remains a significant challenge due to the difficulty of modeling diverse pixel trajectories from limited inputs. Traditional methods struggle with low-order approximations, and recent Latent Video Diffusion Models (LVDM) improve it through a conditional generation modeling. Still, current LVDMs often prioritize pixel fidelity over motion coherence in their reconstruction objective, leading to artifacts in extreme motion scenarios. To address this, we propose RDVFI, a novel approach that leverages an LVDM to generate sparse latent keyframes which define high-order, continuous pixel trajectories. The estimated continuous pixel trajectories accurately index pixel movements from inputs to arbitrary timestamps, generating optical flows to warp input pixels into the target frame. By decoupling sequence motion generation from high-resolution rendering, RDVFI operates on a fixed, lower resolution, and fewer diffusion sampling steps, introducing significant efficiency gains. Extensive experiments demonstrate that RDVFI achieves state-of-the-art visual and numerical performance, with over 75\% of viewers selecting it as the best method in terms of motion and frame quality compared to leading baselines. Furthermore, RDVFI is the first LVDM-based VFI method to achieve real-time performance (17 FPS at 1024x576), offering a x44 acceleration over the current state-of-the-art and also robustly handling challenging motions.
+            Despite recent progress, diffusion-based video frame interpolation methods still struggle with large, complex motions, resulting in discontinuous motions and inconsistent object appearances across frames. We observe that these limitations arise from both the current full-sequence interpolation strategy and the pixel reconstruction training objective. To solve these challenges, we propose ARVFI, a novel video diffusion-based interpolation method for large complex motion interpolation. Instead of generating all intermediate frames simultaneously, ARVFI interpolates in an autoregressive manner from two input frames to the middle ones. Thus, ARVFI interpolates a frame that is further away from the inputs based on all previous interpolation results, resulting in smoother motion transitions and better temporal consistency. Additionally, ARVFI further utilizes DINOv3 features as motion representations, which provide high-level semantics for accurate motion estimation, compared with a simple pixel-level loss.
+With all these designs, ARVFI generates the intermediate DINOv3 features first and then the frames with an effective conditional generation method for frames. Our ARVFI consistently outperforms existing methods with superior interpolation accuracy and visual quality.
           </p>
         </div>
       </div>
