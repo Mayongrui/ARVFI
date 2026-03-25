@@ -9,7 +9,7 @@ Yongrui Ma, Shijie Zhao, Mingde Yao, Junlin Li, Li Zhang, Xiaohong Liu, Qi Dou, 
 Please contact Yongrui Ma at yongrayma@gmail.com for more information.
 
 ## Action List
-- [ ] Arxiv/ICLR paper link release
+- [ ] Arxiv/CVPR paper link release
 - [ ] Evaluation
 - [ ] Evaluation code release 
 
